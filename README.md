@@ -32,15 +32,15 @@ Next make sure the .vscode/settings.json paths are set to point VSCode to your R
 
 ## Configuration
 
-All parameters for both the Python and R scripts are configured through a `.env` file. 
-A sample `.env.example` file is provided with default values. 
+All parameters for both the Python and R scripts are configured through a `.env` file.
+A sample `.env.example` file is provided with default values.
 Copy the example file to create your own `.env` file:
 ```
 cp .env.example .env
 ```
 
 Edit the `.env` file to customize the parameters as needed (explaination can be found below).
-  
+
 
 ## Usage
 
@@ -63,10 +63,10 @@ This creates:
 - `output/matrices.h5`: An HDF5 file containing:
   - Height matrix
   - Three color channel matrices (red, green, blue)
-- `output/colormap.png`: Gradient distribution of the used color range 
+- `output/colormap.png`: Gradient distribution of the used color range
 - `output/colorized.png`: (Optionally) A plot showing the colorized visualization
 
-![Hexagons](images/colorized.png)
+![Colorized](images/colorized.png)
 
 
 Finally, run the R script to generate the 3D visualization:
@@ -76,7 +76,7 @@ Rscript src/render.R
 This creates:
 - `output/rendering.png`: The final 3D visualization with lighting and shading effects
 
-![Hexagons](images/rendering.png)
+![Rendering](images/rendering.png)
 
 
 The workflow is sequential, with each script building on the output of the previous one. All parameters for these scripts can be configured through the `.env` file.
@@ -88,7 +88,7 @@ The `.env` file contains all parameters for both scripts:
 ### Input/Output Paths
 - `TERRAIN_FILE`: Path to the terrain data file (GeoPackage or shapefile) (default: "input/gemeenten/gemeenten.shp")
 - `TERRAIN_LAYER`: Layer name in the terrain GeoPackage (only used for GeoPackage files; default: "provinciegebied")
-- `FEATURE_GPKG`: Path to the GeoPackage containing feature data (default: "input/order_data_export_20250413_141033.gpkg")
+- `FEATURE_GPKG`: Path to the GeoPackage containing feature data (default: "input/dataset.gpkg")
 - `HEXAGONS_PICKLE`: Path to save the hexagonized data (default: "output/hexagons.pkl")
 - `HEXAGONS_PLOT`: Path to save the hexagon grid plot (default: "output/hexagons.png")
 - `COLORIZED_PLOT`: Path to save the colorized visualization (default: "output/colorized.png")
