@@ -1,0 +1,39 @@
+name: Code Quality Pre-Commits
+
+on:
+  pull_request:
+  push:
+    branches: [dev]
+
+jobs:
+  pre-commit:
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.13"]
+        poetry-version: ["2.1.1"]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: install poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: ${{ matrix.poetry-version }}
+
+      - name: install dependencies
+        run: poetry install --no-interaction --with dev
+
+      - name: pre-commit hooks
+        run: poetry run pre-commit run --all-files

@@ -1,0 +1,21 @@
+{
+  "files.eol": "\n",
+  "python.autoComplete.extraPaths": [
+    "./src"
+  ],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportInvalidTypeForm": "none"
+  },
+  "python.analysis.extraPaths": [
+    "./src"
+  ],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "r.rterm.windows": "C:\\Users\\basno\\miniconda3\\envs\\rayshaders\\Scripts\\R.exe",
+  "r.rpath.windows": "C:\\Users\\basno\\miniconda3\\envs\\rayshaders\\Scripts\\R.exe",
+  "[r]": {
+    "editor.hover.enabled": false
+  }
+}

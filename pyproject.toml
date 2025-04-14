@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hextech-rayshaders"
+version = "0.1.0"
+description = ""
+package-mode = false
+authors = ["Bas Nottrot"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+affine = "^2.4.0"
+black = "^25.1.0"
+dotenv = "^0.9.9"
+geopandas = "^1.0.1"
+h3 = "^4.0.0"
+h5py = "^3.13.0"
+loguru = "^0.7.2"
+matplotlib = "^3.10.1"
+numpy = "^2.2.4"
+perlin-noise = "^1.13"
+pre-commit = "^4.2.0"
+rasterio = "^1.4.3"
+ruff = "^0.11.5"
+shapely = "^2.0.7"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"

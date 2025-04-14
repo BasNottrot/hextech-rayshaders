@@ -1,0 +1,5 @@
+.env
+input
+output
+_deprecated
+__pycache__
