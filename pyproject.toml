@@ -19,7 +19,7 @@ numpy = "^2.2.4"
 perlin-noise = "^1.13"
 pre-commit = "^4.2.0"
 rasterio = "^1.4.3"
-ruff = "^0.11.5"
+ruff = ">=0.11.5,<0.16.0"
 shapely = "^2.0.7"
 
 [build-system]
