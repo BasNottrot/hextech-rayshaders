@@ -13,3 +13,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    # Supply-chain hardening: wait 30 days after a release before opening a PR,
+    # so malicious versions have time to be yanked before we ever see them.
+    cooldown:
+      default-days: 30

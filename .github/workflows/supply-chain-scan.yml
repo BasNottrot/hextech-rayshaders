@@ -1,0 +1,37 @@
+name: Supply Chain Scan
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  scfw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: "2.3.2"
+
+      - name: Install scfw
+        run: pipx install scfw
+
+      # Scans every package in poetry.lock against Datadog's malicious-package
+      # dataset and OSV.dev before any install actually runs. Fails the job
+      # on critical findings; warnings also fail in CI (no TTY to confirm).
+      - name: Scan dependencies
+        run: scfw run --error-on-block --block-on-warning poetry install --no-interaction --all-groups
