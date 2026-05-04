@@ -8,7 +8,7 @@ authors = ["Bas Nottrot"]
 [tool.poetry.dependencies]
 python = "^3.13"
 affine = "^2.4.0"
-black = "^25.1.0"
+black = ">=25.1,<27.0"
 dotenv = "^0.9.9"
 geopandas = "^1.0.1"
 h3 = "^4.0.0"
